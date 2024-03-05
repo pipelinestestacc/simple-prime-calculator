@@ -17,9 +17,9 @@ FROM openjdk:latest
 #  -- Copy the built JAR file from the previous stage
 WORKDIR /app
 
-COPY --from=builder /app/build/libs/*.jar /app/app.jar
+COPY --from=builder /app/build/libs/*.jar /app/simple-prime-numbers-calculator.jar
 
 VOLUME /app/config
 
 # Application start up
-CMD ["java", "-jar", "app.jar", "10"]
+CMD ["java", "-jar", "simple-prime-numbers-calculator.jar", "10"]
